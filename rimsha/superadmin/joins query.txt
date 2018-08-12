@@ -1,0 +1,62 @@
+SELECT programs.id,programs.title,programs.user_id, admin_p_detail.p_id,admin_p_detail.uni_name,admin_p_detail.uni_dept ,admin_e_criteria.program 
+FROM programs 
+INNER JOIN 
+admin_p_detail ON programs.id = admin_p_detail.p_id
+INNER JOIN 
+admin_e_criteria ON programs.id = admin_e_criteria.p_id
+
+
+
+
+
+SELECT programs.id,programs.title,programs.user_id, admin_p_detail.p_id,admin_p_detail.uni_name,admin_p_detail.uni_dept , admin_e_criteria.program,admin_e_criteria.matric_marks,admin_e_criteria.inter_marks,admin_e_criteria.bachlor_marks 
+FROM programs 
+INNER JOIN admin_p_detail ON 
+programs.id = 1 
+INNER JOIN admin_e_criteria ON 
+programs.id = 1
+
+
+SELECT 
+programs.id,programs.title,programs.user_id, 
+admin_p_detail.p_id,admin_p_detail.uni_name,admin_p_detail.uni_dept ,admin_p_detail.uni_campus ,admin_p_detail.max_duration ,admin_p_detail.min_duration ,admin_p_detail.t_courses ,admin_p_detail.t_hours ,admin_p_detail.img ,
+
+admin_e_criteria.program,admin_e_criteria.matric_marks,admin_e_criteria.inter_marks,admin_e_criteria.bachlor_marks 
+FROM programs 
+INNER JOIN admin_p_detail ON 
+programs.id = 1 
+INNER JOIN admin_e_criteria ON 
+programs.id = 1
+INNER JOIN admin_about ON 
+programs.id = 1
+
+
+SELECT 
+programs.*,
+admin_about.*,
+admin_p_detail.*,
+admin_e_criteria.*,
+admin_a_schedule.*,
+admin_criteria_list.*,
+admin_late_admission.*
+FROM programs 
+INNER JOIN admin_about ON programs.id = 1
+INNER JOIN admin_p_detail ON programs.id = 1
+INNER JOIN admin_e_criteria ON programs.id = 1
+INNER JOIN admin_a_schedule ON programs.id = 1
+INNER JOIN admin_criteria_list ON programs.id = 1
+INNER JOIN admin_late_admission ON programs.id = 1
+
+
+SELECT programs.*, admin_about.*, admin_p_detail.*, admin_e_criteria.*, admin_a_schedule.*, admin_criteria_list.*, admin_late_admission.* 
+FROM programs 
+left join admin_about ON programs.id = admin_about.p_id AND programs.id = 1 
+left join admin_p_detail ON programs.id = admin_p_detail.p_id 
+left join admin_e_criteria ON programs.id = admin_e_criteria.p_id 
+left join admin_a_schedule ON programs.id = admin_a_schedule.p_id 
+left join admin_criteria_list ON programs.id = admin_criteria_list.p_id 
+left join admin_late_admission ON programs.id = admin_late_admission.p_id 
+where programs.id = 1
+
+SELECT programs.*, admin_about.*, admin_p_detail.*, admin_e_criteria.*, admin_a_schedule.*, admin_criteria_list.*, admin_late_admission.* FROM programs left join admin_about ON programs.id = admin_about.p_id left join admin_p_detail ON programs.id = admin_p_detail.p_id left join admin_e_criteria ON programs.id = admin_e_criteria.p_id left join admin_a_schedule ON programs.id = admin_a_schedule.p_id left join admin_criteria_list ON programs.id = admin_criteria_list.p_id left join admin_late_admission ON programs.id = admin_late_admission.p_id where programs.id = 1
+
